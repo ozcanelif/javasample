@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest {
                 .selectCat(3)
                 .selectSubCat(5)
                 .callLoginPage()
-                .login("elif.ozcan@n11.com", "Elif1158");
+                .login("elif.ozcan@n11.com", "123qwe*");
         Thread.sleep(3000);
 
         new ProductDetailPage(driver)
@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
 
         new BasketPage(driver).addNewAdress("elif özcan","İstanbul","Eyüp",
                 "Alibeyköy","skdfjsk fskdjfs 24","5342424242",
-                "43028029288","ev67");
+                "52825139106","ev67");
         new BasketPage(driver).clickBuyButton();
 
         new PaymentPage(driver).setCreditCardInfo("1234","5678","1435","8900",

@@ -10,7 +10,7 @@ public class BasketPage extends BasePage {
         super(driver);
         driver.get("https://n11.com/sepetim");
     }
-    public void addNewAdress(String fullname, String cityName, String districtName,
+    public BasketPage addNewAdress(String fullname, String cityName, String districtName,
                              String neighborhoodName, String adressDetail, String phoneNumber,
     String identityNo,String addressName) throws InterruptedException {
         clickBy(By.xpath("//div[8]//div[2]//p[1]"));
@@ -25,10 +25,12 @@ public class BasketPage extends BasePage {
         setById("tcNO", identityNo);
         setById("addressName", addressName);
         clickBy(By.cssSelector("div.content >div.btnHolder>span"));
+        return this;
     }
 
-    public void clickBuyButton(){
+    public BasketPage clickBuyButton(){
         clickBy(By.id("js-goToPaymentBtn"));
+        return this;
     }
 
 

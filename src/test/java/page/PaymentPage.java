@@ -1,8 +1,10 @@
 package page;
 
 import base.BasePage;
+import static org.junit.Assert.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class PaymentPage extends BasePage {
     public PaymentPage(WebDriver driver) {
@@ -20,5 +22,8 @@ public class PaymentPage extends BasePage {
         selectFromDropDown("expireMonth", month);
         selectFromDropDown("expireYear", year);
         setById("securityCode", cvv);
+        WebElement element = driver.findElement(By.xpath("//div[contains(text(),'Geçersiz kredi kart')]"));
+        assertTrue(element.isDisplayed());
+        System.out.println("Geçersiz kart numarası ile ödeme testi başarılı.");
     }
 }
